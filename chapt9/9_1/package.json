@@ -1,0 +1,17 @@
+{
+  "name": "websocket-sample",
+  "version": "1.0.0",
+  "description": "A sample of a simple websocket",
+  "main": "ws.js",
+  "dependencies": {
+    "ws": "^1.1.0"
+  },
+  "scripts": {
+    "start": "open index.html & node ws"
+  },
+  "keywords": [
+    "Websocket"
+  ],
+  "author": "Avi Charlop",
+  "license": "MIT"
+}
