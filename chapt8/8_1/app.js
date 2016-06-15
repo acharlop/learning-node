@@ -18,28 +18,36 @@ var skierTerms = [
 	}
 ]
 
+// all parsing the app needs
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-
-app.use(function(req, res, next) { // request, response, next function in chain
+// first custom plugin to console log
+// request, response, next function in chain
+app.use(function(req, res, next) { 
 	console.log(`${req.method} request for ${req.url} - ${JSON.stringify(req.body)}`)
 	next()
 })
 
+// main app firing
 app.use(express.static("./public"))
 
+// cross domain usage of api not public folder
 app.use(cors())
 
+// get route
 app.get("/dictionary-api", function(req, res) {
 	res.json(skierTerms)
 })
 
+// post route
 app.post("/dictionary-api", function(req, res) {
 	skierTerms.push(req.body)
 	res.json(skierTerms)
 })
 
+// delete route using route param
+// filter out request param term from object and return
 app.delete("/dictionary-api/:term", function(req, res) {
 	skierTerms = skierTerms.filter(function(definition) {
 		return definition.term.toLowerCase() !== req.params.term.toLowerCase()
