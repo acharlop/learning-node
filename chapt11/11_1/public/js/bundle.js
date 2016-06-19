@@ -11,7 +11,6 @@ $(document).ready(function () {
         document.forms[0].reset();
     });
 
-    alert("Hello World!")
 });
 
 },{"./lib/printTerms":2,"jquery":3}],2:[function(require,module,exports){
