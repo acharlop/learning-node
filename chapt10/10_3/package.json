@@ -16,6 +16,6 @@
   ],
   "devDependencies": {
     "chai": "^3.4.0",
-    "require": "^2.4.20"
+    "rewire": "^2.5.1"
   }
 }
