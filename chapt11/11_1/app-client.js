@@ -10,4 +10,5 @@ $(document).ready(function () {
         document.forms[0].reset();
     });
 
+    alert("Hello World!")
 });
